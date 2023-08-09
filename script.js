@@ -32,7 +32,7 @@ async function generateAllPortfolio(data){
                         <strong>作成日</strong>
                         <p>${element.date}</p>
                         <footer class="p-1 d-flex justify-content-center">
-                            <a href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
+                            <a title="Go to the repository" href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
                         </footer>
                     </article>
                 `
@@ -64,7 +64,7 @@ async function generateTopThreePortfolio(data){
                         </div>
                     </div>
                     <footer class="p-1 d-flex justify-content-center">
-                        <a href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
+                        <a title="Go to the repository" href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
                     </footer>
                 </article>
                 `
