@@ -1,9 +1,9 @@
 const projectJson = "/portfolio.json"
 
 if (window.location.pathname.includes("index.html")) {
-    startFetch(generateTopPortfolio)
+    startFetch(generateTopThreePortfolio);
 } else if (window.location.pathname.includes("project.html")) {
-    startFetch(generateAllPortfolio)
+    startFetch(generateAllPortfolio);
 }
 
 function startFetch(callback){
@@ -42,12 +42,13 @@ async function generateAllPortfolio(data){
     });
 }
 
-async function generateTopPortfolio(data){
-    const maxItemsToShow = 5;
+async function generateTopThreePortfolio(data){
     const container = document.getElementById("top-project-container");
     let html = "";
-
-    data.forEach(element => {
+    
+    data.sort((a,b) => a.order - b.order);
+    const maxItemsToShow = 3;
+    data.slice(0,maxItemsToShow).forEach(element => {
         html += `
                     <article class="col-12 box" id="${element.id}" style="order: ${element.order};">
                     <header class="text-center p-2">${element.title}</header>
@@ -72,5 +73,3 @@ async function generateTopPortfolio(data){
         
     });
 }
-
-

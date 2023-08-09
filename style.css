@@ -17,12 +17,3 @@ img {
     box-shadow: 2px 2px 5px gray, -2px -2px 5px grey;
     cursor: pointer;
 }
-
-/* topページには3つだけを表示させる */
-#top-project-container article:nth-child(-n+3){
-    display: block;
-}
-
-#top-project-container article:nth-child(n+4){
-    display: none;
-}
