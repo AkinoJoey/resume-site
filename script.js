@@ -1,12 +1,13 @@
 const projectJson = "/portfolio.json"
 
 if (window.location.pathname.includes("index.html")) {
-    startFetch(generateTopThreePortfolio);
+    fetchProjectJson(generateTopThreePortfolio);
+    generateAboutMe();
 } else if (window.location.pathname.includes("project.html")) {
-    startFetch(generateAllPortfolio);
+    fetchProjectJson(generateAllPortfolio);
 }
 
-function startFetch(callback){
+function fetchProjectJson(callback){
     fetch(projectJson)
     .then(response => response.json())
     .then(data => callback(data))
@@ -74,3 +75,20 @@ async function generateTopThreePortfolio(data){
     });
 }
 
+
+function generateAboutMe(){
+    const container = document.getElementById("about-me");
+    let p = document.createElement("p")
+
+    fetch("/aboutMe.txt")
+        .then(response => response.text())
+        .then(data => {
+            data = data.replace(/\n/g, "<br>");
+            p.innerHTML = data;
+        })
+        .catch(error => {
+            console.log("Error fetching the text file:", error);
+        });
+
+        container.append(p);
+}
