@@ -22,7 +22,7 @@ async function generateAllPortfolio(data){
                     <article class="col-12" id="${element.id}" style="order: ${element.order};">
                         <header class="text-center p-2">${element.title}</header>
                         <div class="d-flex justify-content-center mb-3">
-                            <img class="col-12 w-75" src="/img/food.jpg">
+                            <img class="col-12 w-75" src="${element.thumbnail}">
                         </div>
                         
                         <strong>どういうアプリ？</strong>
@@ -32,7 +32,7 @@ async function generateAllPortfolio(data){
                         <strong>作成日</strong>
                         <p>${element.date}</p>
                         <footer class="p-1 d-flex justify-content-center">
-                            <a href="#" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
+                            <a href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
                         </footer>
                     </article>
                 `
@@ -54,7 +54,7 @@ async function generateTopThreePortfolio(data){
                     <header class="text-center p-2">${element.title}</header>
                     <div class="d-flex flex-column flex-md-row">
                         <div class="d-flex justify-content-center align-items-center col-12 col-md-6">
-                            <img class="col-12 w-75" src="/img/food.jpg">
+                            <img class="col-12 w-75" src="${element.thumbnail}">
                         </div>
                         <div class="mt-3 mt-md-0">
                             <strong>どういうアプリ？</strong>
@@ -64,7 +64,7 @@ async function generateTopThreePortfolio(data){
                         </div>
                     </div>
                     <footer class="p-1 d-flex justify-content-center">
-                        <a href="#" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
+                        <a href="${element.source}" class="text-dark"><i class="fa-brands fa-github fa-xl"></a></i>
                     </footer>
                 </article>
                 `
@@ -73,3 +73,4 @@ async function generateTopThreePortfolio(data){
         
     });
 }
+
