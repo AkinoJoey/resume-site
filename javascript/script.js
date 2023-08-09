@@ -1,9 +1,9 @@
 const projectJson = "/portfolio.json"
 
-if (window.location.pathname.includes("index.html")) {
+if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
     fetchProjectJson(generateTopThreePortfolio);
     generateAboutMe();
-} else if (window.location.pathname.includes("project.html")) {
+} else if (window.location.pathname == "/project.html") {
     fetchProjectJson(generateAllPortfolio);
 }
 
